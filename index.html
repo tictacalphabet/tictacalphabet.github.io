@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" type="text/css" href="ld.css">
 	<title> tic tac toe Alphabet! </title>
 	<script type="text/javascript"> </script>
 
 </head>
-<body>
+
 	<script>
+
+function changeColor(){
+	// alert("hi");
+	var myId = document.getElementById("R1C1");
+    myId.style.backgroundColor = "blue";
+
+}
+
+
 		// from line 10 and on, will be done in pseudo code for references.
 
 // welcome page, start button.
@@ -51,9 +61,7 @@
 
 // alert OR banner that will say YOUR MOVE after the computer moves.
 
-	if (condition){
-		alert("Your move.");
-	}
+	 
 
 // create some kind of function or counter of some kind that will be able to detect 3 in a row at any time.
 
@@ -84,11 +92,23 @@ alert(endgame);
 
 	</script>
 	<!--  -->
+
+
+<body>
+
+
 <center> 
 	<button onclick=welcomeAlert()>
 		Ready!
 	</button>
 </center>
+
+<div class="gamesquare" id="R1C1" onclick=changeColor() ></div>
+<div class="gamesquare" id="R1C2"  ></div>
+<div class="gamesquare" id="R1C3"  ></div>
+
+
+
 
 </body>
 </html>

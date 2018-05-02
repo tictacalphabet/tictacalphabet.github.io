@@ -1,0 +1,12 @@
+body {
+	background-color: pink;
+}
+
+
+.gamesquare {
+	height: 100px;
+	width: 100px;
+	float: left;
+	background-color: red;
+	margin: 10px;
+}
