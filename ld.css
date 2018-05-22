@@ -1,12 +1,81 @@
 body {
-	background-color: pink;
+	background-color: #22411F;
+}
+
+h1 {
+	background-color: white;
+	font-family: "Verdana", "Sans-serif";
 }
 
 
-.gamesquare {
-	height: 100px;
-	width: 100px;
+#R1C1 {
+	height: 200px;
+	width: 200px;
 	float: left;
-	background-color: red;
-	margin: 10px;
+	margin-left: 500px;
+	border-bottom: 5px solid white;
+	border-right : 5px solid white;
+	background-color: transparent;
+
 }
+
+#R1C2 {
+	height: 200px;
+	width: 200px;
+	float: left;
+	border-bottom: 5px solid white;
+	border-right : 5px solid white;
+	background-color: transparent;
+}
+
+#R1C3 {
+	height: 200px;
+	width: 200px;
+	float: left;
+	border-bottom: 5px solid white;
+	background-color: transparent;
+
+}
+
+#R2C1 {
+	height: 200px;
+	width: 200px;
+	clear: both;
+	margin-left: 500px;
+	border-right : 5px solid white;
+	border-bottom : 5px solid white;
+	background-color: transparent;
+}
+
+#R2C2 {
+	height: 200px;
+	width: 200px;	
+	/*margin-left: 500px;*/
+	border-bottom : 5px solid white;
+	border-right : 5px solid white;
+	background-color: transparent;
+}
+
+/*#R2C3 {
+	height: 200px;
+	width: 200px;
+	border-bottom : 5px solid white;
+	background-color: transparent;
+}*/
+
+#R3C1 {
+	height: 200px;
+	width: 200px;
+	clear: both;
+	margin-left: 500px;
+	border-right : 5px solid white;
+	background-color: transparent;
+	
+}
+
+/*#R3C2 {
+	height: 200px;
+	width: 200px;
+	background-color: transparent;
+	border-right : 5px solid white;
+}*/
