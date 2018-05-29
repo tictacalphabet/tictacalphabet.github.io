@@ -46,20 +46,20 @@ h1 {
 	background-color: transparent;
 }
 
-/*#box5 {
+#box5 {
 	height: 200px;
 	width: 200px;	
 	border-bottom : 5px solid white;
 	border-right : 5px solid white;
 	background-color: transparent;
-}*/
+}
 
-/*#box6 {
+#box6 {
 	height: 200px;
 	width: 200px;
 	border-bottom : 5px solid white;
 	background-color: transparent;
-}*/
+}
 
 #box7 {
 	height: 200px;
@@ -71,9 +71,9 @@ h1 {
 	
 }
 
-/*#box8 {
+#box8 {
 	height: 200px;
 	width: 200px;
 	background-color: transparent;
 	border-right : 5px solid white;
-}*/
+}
