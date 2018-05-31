@@ -15,7 +15,7 @@ float: left;
 }
 
 #gameboard {
-	background-color: black;
+	background-color: transparent;
 	margin: 20px;
 }
 
@@ -30,53 +30,53 @@ background-color: transparent;
 	float: left;
 	border-bottom: 5px solid white;
 	border-right : 5px solid white;
-	background-color: lightblue;
+	/*background-color: lightblue;*/
 }
 
 #box2 {
 	float: left;
 	border-bottom: 5px solid white;
 	border-right : 5px solid white;
-	background-color: blue;
+	/*background-color: blue;*/
 }
 
 #box3 {
 	float: left;
 	border-bottom: 5px solid white;
-	background-color: brown
+	/*background-color: brown*/
 }
 
 #box4 {
 	clear: left;
 	border-right : 5px solid white;
 	border-bottom : 5px solid white;
-	background-color: purple;
+	/*background-color: purple;*/
 }
 
 #box5 {
 	border-bottom : 5px solid white;
 	border-right : 5px solid white;
-	background-color: orange;
+	/*background-color: orange;*/
 }
 
 #box6 {
 border-bottom : 5px solid white;
-background-color: red;
+/*background-color: red;*/
 }
 
 #box7 {
 clear: left;
 border-right : 5px solid white;
-background-color: yellow;
+/*background-color: yellow;*/
 }
 
 #box8 {
 border-right : 5px solid white;
-background-color: pink;
+/*background-color: pink;*/
 }
 
 
 #box9 {
 background-color: transparent;
-background-color: cyan;
+/*background-color: cyan;*/
 }
