@@ -1,87 +1,82 @@
 body {
 	background-color: #22411F;
+	background-color: silver;
 }
 
 h1 {
-	background-color: white;
+	/*background-color: white;*/
+	margin: 10px;
 	font-family: "Verdana", "Sans-serif";
 }
 
+div {
+float: left;
+
+}
+
+#gameboard {
+	background-color: black;
+	margin: 20px;
+}
+
+.gamesquare {
+height: 200px;
+width: 200px;
+background-color: transparent;
+}
+
+
 #box1 {
-	height: 200px;
-	width: 200px;
 	float: left;
-	margin-left: 500px;
 	border-bottom: 5px solid white;
 	border-right : 5px solid white;
-	background-color: transparent;
-
+	background-color: lightblue;
 }
 
 #box2 {
-	height: 200px;
-	width: 200px;
 	float: left;
 	border-bottom: 5px solid white;
 	border-right : 5px solid white;
-	background-color: transparent;
+	background-color: blue;
 }
 
 #box3 {
-	height: 200px;
-	width: 200px;
 	float: left;
 	border-bottom: 5px solid white;
-	background-color: transparent;
-
+	background-color: brown
 }
 
 #box4 {
-	height: 200px;
-	width: 200px;
-	clear: both;
-	margin-left: 500px;
+	clear: left;
 	border-right : 5px solid white;
 	border-bottom : 5px solid white;
-	background-color: transparent;
+	background-color: purple;
 }
 
-/*#box5 {
-	height: 200px;
-	width: 200px;	
+#box5 {
 	border-bottom : 5px solid white;
 	border-right : 5px solid white;
-	background-color: transparent;
+	background-color: orange;
 }
 
 #box6 {
-	height: 200px;
-	width: 200px;
-	border-bottom : 5px solid white;
-	background-color: transparent;
+border-bottom : 5px solid white;
+background-color: red;
 }
-*/
+
 #box7 {
-	height: 200px;
-	width: 200px;
-	clear: both;
-	margin-left: 500px;
-	border-right : 5px solid white;
-	background-color: transparent;
-	
+clear: left;
+border-right : 5px solid white;
+background-color: yellow;
 }
 
-/*#box8 {
-	height: 200px;
-	width: 200px;
-	background-color: transparent;
-	border-right : 5px solid white;
-}*/
+#box8 {
+border-right : 5px solid white;
+background-color: pink;
+}
 
-/*#box9 {
-	height: 200px;
-	width: 200px;
-	clear: both;
-	margin-left: 500px;
-	background-color: transparent;
-}*/
+
+#box9 {
+background-color: transparent;
+background-color: cyan;
+}
