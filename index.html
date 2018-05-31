@@ -20,7 +20,7 @@ function changeColor(){
 
 
 // welcome page, start button.
-// player names instead of playing against computer, computer has to predict move. we can switch to p1 and p2 instead!
+// switch to p1 and p2
 // try letters other than x and o
 // draw a grid and grid is empty
 // use inner html method to change from empty to player1 or p2 
@@ -28,36 +28,27 @@ function changeColor(){
 // randomize letters A to Z
 // computer will place O in random places every game.
 
-// coordinate where the pieces will be placed and what happens whenever the user clicks on a gridspace.
-
-// idea: have a multiple choice with coordinates (x, y) to allow player to choose where the X goes on the grid instead of clicking where the X should be placed.
-
-// randomize coordinates but inside the grid.
-
-// automate the computer to make a move after the user does.
-
 // text banner that says (your name)'s move after the other moves
-
-	 
 
 // create some kind of function or counter of some kind that will be able to detect 3 in a row at any time.
 
 //winning combos: 
-// R1C1, R1C2, R1C3
-// R2C1, R2C2, R2C3
-// R3C1, R3C2, R3C3
-
-
+// box1, box2, box3
+// box4, box5, box6
+// box7, box8, box9
+// box1, box4, box7
+// box2, box5, box8
+// box3, box6, box9
+// box1, box5, box9
+// box3, box5, box7
 
 // ^ detect any ties/draws?
+
 // if front is blocked with var ...
 
 // add if or while functions here! (for if you won or if you lost)
 
 // if (row === 3 || column === 3 || diagonal === 3) {
-//       return // x player //
-
-
 
 function end(){
 win = ("Congrats, you win!");
@@ -76,7 +67,6 @@ alert(endgame);
 // ^ use inner html
 
 }
-
 // ^ "reload to play again" / end page
 
 	</script>
@@ -110,6 +100,6 @@ alert(endgame);
 <div class="gamesquare" id="box6" onclick=changeColor()> </div> 
 <div class="gamesquare" id="box7" onclick=changeColor()> </div>
 <div class="gamesquare" id="box8" onclick=changeColor()> </div>
-
+<div class="gamesquare" id="box9" onclick=changeColor()> </div>
 </body>
 </html>
