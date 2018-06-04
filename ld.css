@@ -32,93 +32,93 @@ font-family: Arial, Helvetica, sans-serif;
 	background-color: lightblue;
 }*/
 
-#box1 {
+#box0 {
 	float: left;
 	border-bottom: 5px solid white;
 	border-right : 5px solid white;
 }
 
-#box1:hover {
+#box0:hover {
 	cursor: pointer;
 	background-color: lightblue;
+}
+
+#box1 {
+	float: left;
+	border-bottom: 5px solid white;
+	border-right : 5px solid white;
+
+}
+
+#box1:hover {
+	cursor: pointer;
+	background-color: orange;
 }
 
 #box2 {
 	float: left;
 	border-bottom: 5px solid white;
-	border-right : 5px solid white;
-
 }
 
 #box2:hover {
 	cursor: pointer;
-	background-color: orange;
-}
-
-#box3 {
-	float: left;
-	border-bottom: 5px solid white;
-}
-
-#box3:hover {
-	cursor: pointer;
 	background-color: pink;
 }
 
-#box4 {
+#box3 {
 	clear: left;
 	border-right : 5px solid white;
 	border-bottom : 5px solid white;
 }
 
-#box4:hover {
+#box3:hover {
 	cursor: pointer;
 	background-color: magenta;
 }
 
-#box5 {
+#box4 {
 	border-bottom : 5px solid white;
 	border-right : 5px solid white;
 }
 
-#box5:hover {
+#box4:hover {
 	cursor: pointer;
 	background-color: lightgreen;
 }
 
-#box6 {
+#box5 {
 border-bottom : 5px solid white;
 }
 
-#box6:hover {
+#box5:hover {
 	cursor: pointer;
 	background-color: yellow;
 }
 
-#box7 {
+#box6 {
 clear: left;
+border-right : 5px solid white;
+}
+
+#box6:hover {
+	cursor: pointer;
+	background-color: purple;
+}
+
+#box7 {
 border-right : 5px solid white;
 }
 
 #box7:hover {
 	cursor: pointer;
-	background-color: purple;
-}
-
-#box8 {
-border-right : 5px solid white;
-}
-
-#box8:hover {
-	cursor: pointer;
 	background-color: #94CED6;
 }
 
-#box9 {
+#box8 {
 background-color: transparent;
 }
 
-#box9:hover {
+#box8:hover {
 	cursor: pointer;
 	background-color: #A9769E;
 }

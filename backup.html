@@ -7,14 +7,13 @@
 
 </head>
 
-<script>
+	<script>
 
 
-
-var player0 = 'O';
 var player1 = 'X';
+var player2 = 'O';
 
-var currentPlayer = 0;
+var currentTurn = 1;
 var movesMade = 0;
 
 // try letters other than x and o
@@ -27,10 +26,15 @@ var movesMade = 0;
 // create some kind of function or counter of some kind that will be able to detect 3 in a row at any time.
 
 //winning combos: 
-// example box0, box1, box2
+// box1, box2, box3
+// box4, box5, box6
+// box7, box8, box9
+// box1, box4, box7
+// box2, box5, box8
+// box3, box6, box9
+// box1, box5, box9
+// box3, box5, box7
 
-
-// AI grading.. 
 
 // var winningCombos = [
 // 	[0, 1, 2],
@@ -80,42 +84,25 @@ var movesMade = 0;
 
 <br>
 
-<div class="gamesquare" id="box0" onclick="newMove(0)"> </div>
-<div class="gamesquare" id="box1" onclick="newMove(1)"> </div>
-<div class="gamesquare" id="box2" onclick="newMove(2)"> </div> 
-<div class="gamesquare" id="box3" onclick="newMove(3)"> </div>
-<div class="gamesquare" id="box4" onclick="newMove(4)"> </div>
-<div class="gamesquare" id="box5" onclick="newMove(5)"> </div> 
-<div class="gamesquare" id="box6" onclick="newMove(6)"> </div>
-<div class="gamesquare" id="box7" onclick="newMove(7)"> </div>
-<div class="gamesquare" id="box8" onclick="newMove(8)"> </div>
+<div class="gamesquare" id="box1" onclick="myFunction(event)"> </div>
+<div class="gamesquare" id="box2" onclick="myFunction(event)"> </div>
+<div class="gamesquare" id="box3" onclick="myFunction(event)"> </div> 
+<div class="gamesquare" id="box4" onclick="myFunction(event)"> </div>
+<div class="gamesquare" id="box5" onclick="myFunction(event)"> </div>
+<div class="gamesquare" id="box6" onclick="myFunction(event)"> </div> 
+<div class="gamesquare" id="box7" onclick="myFunction(event)"> </div>
+<div class="gamesquare" id="box8" onclick="myFunction(event)"> </div>
+<div class="gamesquare" id="box9" onclick="myFunction(event)"> </div>
 
 <script>
-
-function newMove(thisBox){
-
-    movesMade++;    
-
-    tempString = "box" + thisBox;
-    console.log("current box: " + tempString);
-    console.log("moves made:" + movesMade);
-
-    var oddPlayer = movesMade % 2;
-    console.log("odd player: " + oddPlayer);
-    tempId = document.getElementById(tempString);
-
-
-    if (oddPlayer ) {
-    	console.log("player is x");
-   	    tempId.innerHTML = player1;
-	    tempId.style.color = "green";
-	    } else {
-	    	console.log("player is O");
-    	    tempId.innerHTML = player0;
-   	        tempId.style.color = "purple";
-	    }
-
-
+function myFunction(event){
+    var x = event.target;
+    console.log("current target: " + event.target);
+    event.target.innerHTML = player1;
+    event.target.style.color = "green";
+    // purple  or green
+ 	// event.target.innerHTML = player2;
+ 	// event.target.style.color = "purple";
  }
 
 </script>
