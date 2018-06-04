@@ -27,15 +27,20 @@ font-size: 100px;
 font-family: Arial, Helvetica, sans-serif;
 }
 
-.gamesquare:hover {
+/*.gamesquare:hover {
 	cursor: pointer;
 	background-color: lightblue;
-}
+}*/
 
 #box1 {
 	float: left;
 	border-bottom: 5px solid white;
 	border-right : 5px solid white;
+}
+
+#box1:hover {
+	cursor: pointer;
+	background-color: lightblue;
 }
 
 #box2 {
@@ -45,9 +50,19 @@ font-family: Arial, Helvetica, sans-serif;
 
 }
 
+#box2:hover {
+	cursor: pointer;
+	background-color: orange;
+}
+
 #box3 {
 	float: left;
 	border-bottom: 5px solid white;
+}
+
+#box3:hover {
+	cursor: pointer;
+	background-color: pink;
 }
 
 #box4 {
@@ -56,13 +71,28 @@ font-family: Arial, Helvetica, sans-serif;
 	border-bottom : 5px solid white;
 }
 
+#box4:hover {
+	cursor: pointer;
+	background-color: magenta;
+}
+
 #box5 {
 	border-bottom : 5px solid white;
 	border-right : 5px solid white;
 }
 
+#box5:hover {
+	cursor: pointer;
+	background-color: lightgreen;
+}
+
 #box6 {
 border-bottom : 5px solid white;
+}
+
+#box6:hover {
+	cursor: pointer;
+	background-color: yellow;
 }
 
 #box7 {
@@ -70,12 +100,25 @@ clear: left;
 border-right : 5px solid white;
 }
 
+#box7:hover {
+	cursor: pointer;
+	background-color: purple;
+}
+
 #box8 {
 border-right : 5px solid white;
 }
 
+#box8:hover {
+	cursor: pointer;
+	background-color: #94CED6;
+}
 
 #box9 {
 background-color: transparent;
 }
 
+#box9:hover {
+	cursor: pointer;
+	background-color: #A9769E;
+}
