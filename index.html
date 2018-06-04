@@ -2,34 +2,32 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="ld.css">
-	<title> tic tac toe alphabet! </title>
+	<title> tic tac toe! </title>
 	<script type="text/javascript"> </script>
 
 </head>
 
 	<script>
-
 function changeColor(){
 	var first = document.getElementById("box1");
     first.style.backgroundColor = "black";
-
     // make it so that whenever a *specific* square is clicked, the gamepiece shows up.
     // how can i adjust the code so that when a square is clicked only that square will change and not an other squares?
 }
 
+var player1 = 'X';
+var player2 = 'O';
 
+var currentTurn = 1;
+var movesMade = 0;
 
-// welcome page, start button.
-// switch to p1 and p2
 // try letters other than x and o
 // draw a grid and grid is empty
 // use inner html method to change from empty to player1 or p2 
 // onclick=myFunction
 // randomize letters A to Z
 // computer will place O in random places every game.
-
 // text banner that says (your name)'s move after the other moves
-
 // create some kind of function or counter of some kind that will be able to detect 3 in a row at any time.
 
 //winning combos: 
@@ -42,64 +40,75 @@ function changeColor(){
 // box1, box5, box9
 // box3, box5, box7
 
+
+// var winningCombos = [
+// 	[0, 1, 2],
+// 	[3, 4, 5],
+// 	[6, 7, 8],
+// 	[0, 3, 6],
+// 	[1, 4, 7],
+// 	[2, 5, 8],
+// 	[0, 4, 8],
+// 	[2, 4, 6]
+//     ];
+
+
+
 // ^ detect any ties/draws?
-
 // if front is blocked with var ...
-
 // add if or while functions here! (for if you won or if you lost)
-
 // if (row === 3 || column === 3 || diagonal === 3) {
 
-function end(){
-win = ("Congrats, you win!");
-lose = ("Aw, shucks. You lose! Try again!");
-// use inner html !!!!
-	if (condition){
-		alert(win);
-		alert(endgame);
-	} else {
-		alert(lose);
-		alert(endgame);
-	}
 
-endgame = ("Reload the page to play again!")
-alert(endgame); 
-// ^ use inner html
 
-}
-// ^ "reload to play again" / end page
 
+// function end(){
+// win = ("Congrats, you win!");
+// lose = ("Aw, shucks. You lose! Try again!");
+// // use inner html !!!!
+// 	if (condition){
+// 		alert(win);
+// 		alert(endgame);
+// 	} else {
+// 		alert(lose);
+// 		alert(endgame);
+// 	}
+// endgame = ("Reload the page to play again!")
+// alert(endgame); 
+// // ^ use inner html
+// }
+// // ^ "reload to play again" / end page
 	</script>
 
 <body>
 
 <center> 
-	<h1> Tic Tac Toe Alphabet!</h1> 
+	<h1> Tic Tac Toe!</h1> 
 </center>
 
-	<b> Player 1 </b> 
-	<form name="player1">
-		<input name="playername1">
-	</form>
-
-	<b> Player 2 </b> 
-	<form name="player2">
-		<input name="playername2">
-	</form>
-<button onclick=myFunction()> 
-	Start the game!
-</button>
 
 <br>
 
-<div class="gamesquare" id="box1" onclick=changeColor()> </div>
-<div class="gamesquare" id="box2" onclick=changeColor()> </div>
-<div class="gamesquare" id="box3" onclick=changeColor()> </div> 
-<div class="gamesquare" id="box4" onclick=changeColor()> </div>
-<div class="gamesquare" id="box5" onclick=changeColor()> </div>
-<div class="gamesquare" id="box6" onclick=changeColor()> </div> 
-<div class="gamesquare" id="box7" onclick=changeColor()> </div>
-<div class="gamesquare" id="box8" onclick=changeColor()> </div>
-<div class="gamesquare" id="box9" onclick=changeColor()> </div>
+<div class="gamesquare" id="box1" onclick="myFunction(event)"> </div>
+<div class="gamesquare" id="box2" onclick="myFunction(event)"> </div>
+<div class="gamesquare" id="box3" onclick="myFunction(event)"> </div> 
+<div class="gamesquare" id="box4" onclick="myFunction(event)"> </div>
+<div class="gamesquare" id="box5" onclick="myFunction(event)"> </div>
+<div class="gamesquare" id="box6" onclick="myFunction(event)"> </div> 
+<div class="gamesquare" id="box7" onclick="myFunction(event)"> </div>
+<div class="gamesquare" id="box8" onclick="myFunction(event)"> </div>
+<div class="gamesquare" id="box9" onclick="myFunction(event)"> </div>
+
+<script>
+function myFunction(event) { 
+    var x = event.target;
+    event.target.innerHTML = player1;
+    event.target.style.color = "green";
+
+	// event.target.innerHTML = player2;
+ // 	event.target.style.color = "purple";
+}
+
+</script>
 </body>
 </html>
