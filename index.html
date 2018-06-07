@@ -1,3 +1,5 @@
+<!-- a note to mr. rowe: i've changed my project from tic tac toe alphabet to just tic tac toe -->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,28 +11,11 @@
 
 <script>
 
-
-
 var player0 = 'O';
 var player1 = 'X';
 
 var currentPlayer = 0;
 var movesMade = 0;
-
-// try letters other than x and o
-// draw a grid and grid is empty
-// use inner html method to change from empty to player1 or p2 
-// onclick=myFunction
-// randomize letters A to Z
-// computer will place O in random places every game.
-// text banner that says (your name)'s move after the other moves
-// create some kind of function or counter of some kind that will be able to detect 3 in a row at any time.
-
-//winning combos: 
-// example box0, box1, box2
-
-
-// AI grading.. 
 
 // var winningCombos = [
 // 	[0, 1, 2],
@@ -43,32 +28,45 @@ var movesMade = 0;
 // 	[2, 4, 6]
 //     ];
 
+function checkWin(){
+    if(movesMade > 5) {
+    var winningCombos = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6]
+        ];
 
 
-// ^ detect any ties/draws?
-// if front is blocked with var ...
-// add if or while functions here! (for if you won or if you lost)
-// if (row === 3 || column === 3 || diagonal === 3) {
+// console.log("Win!");
+
+    // check if winningCombos (winning boxes) are true and valid  
+
+    } else {
+        detectDraw();
+    }
+}
+
+function detectDraw(){
+
+    // if no winning combos as in no three in a rows ..
+
+}
+
+function declareWinner(){
+
+// determine which won: X or O , and coordinate that with the player name.
+// window.alert("Player ___ won. Reload to play again!")
+
+
+}
 
 
 
-
-// function end(){
-// win = ("Congrats, you win!");
-// lose = ("Aw, shucks. You lose! Try again!");
-// // use inner html !!!!
-// 	if (condition){
-// 		alert(win);
-// 		alert(endgame);
-// 	} else {
-// 		alert(lose);
-// 		alert(endgame);
-// 	}
-// endgame = ("Reload the page to play again!")
-// alert(endgame); 
-// // ^ use inner html
-// }
-// // ^ "reload to play again" / end page
 	</script>
 
 <body>
@@ -93,26 +91,24 @@ var movesMade = 0;
 <script>
 
 function newMove(thisBox){
-
     movesMade++;    
-
     tempString = "box" + thisBox;
-    console.log("current box: " + tempString);
-    console.log("moves made:" + movesMade);
+    console.log("Current box: " + tempString);
+    console.log("Moves made:" + movesMade);
 
     var oddPlayer = movesMade % 2;
-    console.log("odd player: " + oddPlayer);
+    console.log("Odd player: " + oddPlayer);
     tempId = document.getElementById(tempString);
 
 
-    if (oddPlayer ) {
-    	console.log("player is x");
+    if (oddPlayer) {
+    	console.log("Player is X.");
    	    tempId.innerHTML = player1;
-	    tempId.style.color = "green";
+	    tempId.style.color = "lightblue";
 	    } else {
-	    	console.log("player is O");
+	    	console.log("Player is O.");
     	    tempId.innerHTML = player0;
-   	        tempId.style.color = "purple";
+   	        tempId.style.color = "orange";
 	    }
 
 
