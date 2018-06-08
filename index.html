@@ -21,6 +21,8 @@ var player1 = 'O';
 var currentPlayer = 0;
 var movesCounter = 0;
 
+
+// 8 is replaced by 1 or 2
 var humanChoices = [8,8,8,8,8,8,8,8,8];
 
 // 8 is nobody, nothing
@@ -31,8 +33,15 @@ var humanChoices = [8,8,8,8,8,8,8,8,8];
 // this below does not change, two dimensitonal array
 var cheatSheet = [
 	[1,1,1,9,9,9,9,9,9], // end with commas
-	[2,2,2,9,9,9,9,9,9]
-
+	[2,2,2,9,9,9,9,9,9],
+	[9,9,9,1,1,1,9,9,9],
+	[9,9,9,2,2,2,9,9,9],
+	[9,9,9,9,9,9,1,1,1],
+	[9,9,9,9,9,9,2,2,2],
+	[1,9,9,9,1,9,9,9,1],
+	[2,9,9,9,2,9,9,9,2],
+	[9,9,1,9,1,9,1,9,9],
+	[9,9,2,9,2,9,2,9,9],
 
 ];
 
@@ -52,7 +61,7 @@ function checkForWin(thisPlayer){
     // outer for loop j will match total number of cheat sheets
     // we have to change the outer loop condition if we add more cheat sheets
     outerloop:
-    for ( var j = 0; j < 2 ; j++  ) {
+    for ( var j = 0; j < 10 ; j++  ) {
 	    console.log("cheat sheet "  + cheatSheet[j]  );  // whole cheat sheet
 	    // innder for loop
 	    innerloop:
@@ -97,29 +106,6 @@ if ( foundWinner) {
 } // end function checkForWin
 
 // this function will check for if there is a win every 5 minutes, and then we will declare the winner and if not then we will go to the function detectDraw.
-
-
-
-function detectDraw(){
-
-    var drawMessage = ("It's a tie!");
-    // document.getElementById("drawMsg").innerHTML = drawMessage;
-
-    } 
-
-// this function should only run if no winner was detected from the function checkWin. this will just give the user a message saying that the game has been tied.
-
-
-
-function declareWinner(){
-
-// search for the three in a row boxes .. x or o? player 1 or player 2?
-// determine which won: X or O , and coordinate that with the player name.
-
-    // var p1Win = ("Player 1 (O) has won!");
-    // var p2Win = ("Player 2 (X) has won!");
-
-}
 
 
 function newMove(thisBox){
@@ -167,10 +153,6 @@ checkForWin(oddPlayer);
 // the way this works is with a variable called oddplayer in which we just divide the variable movesCounter by 2 in order to determeine which player goes next.
 
 
-
-// this function here should be able to see what user managed to get a 3 in a row and then the computer will declare which player it is- signaling that they have won.
-
-
 </script>
 
 
@@ -195,24 +177,3 @@ checkForWin(oddPlayer);
 </body>
 </html>
 
-
-<!-- 
-	[3, 4, 5],
-	[6, 7, 8],
-	[0, 3, 6],
-	[1, 4, 7],
-	[2, 5, 8],
-	[0, 4, 8],
-	[2, 4, 6]
- 
-
-
-    if(movesCounter > 0) {
-    // check if winningCombos (winning boxes) are true and valid  
-        declareWinner();
-    } else {
-        detectDraw();
-    }
-
-
- -->
