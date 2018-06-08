@@ -1,5 +1,4 @@
 <!-- a note to mr. rowe: i've changed my project from tic tac toe alphabet to just tic tac toe -->
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,22 +10,15 @@
 
 <script>
 
-var player0 = 'O';
-var player1 = 'X';
+var player1 = 'O';
+var player2 = 'X';
 
 var currentPlayer = 0;
 var movesMade = 0;
 
-// var winningCombos = [
-// 	[0, 1, 2],
-// 	[3, 4, 5],
-// 	[6, 7, 8],
-// 	[0, 3, 6],
-// 	[1, 4, 7],
-// 	[2, 5, 8],
-// 	[0, 4, 8],
-// 	[2, 4, 6]
-//     ];
+// the currentPlayer variable will help us determine which player goes next which is later used in the function newMove down below on line 86
+
+// the moves made variable helps us count the number of moves which is later useful in checking for winner
 
 function checkWin(){
     if(movesMade > 5) {
@@ -41,31 +33,36 @@ function checkWin(){
         [2, 4, 6]
         ];
 
-
-// console.log("Win!");
-
     // check if winningCombos (winning boxes) are true and valid  
 
+        declareWinner();
     } else {
         detectDraw();
     }
 }
 
+
 function detectDraw(){
 
-    // if no winning combos as in no three in a rows ..
+    // var drawMessage = ("It's a tie!");
+    // document.getElementById("drawMsg").innerHTML = drawMessage;
 
+    } else {
+        declareWinner();
+    }
 }
 
 function declareWinner(){
 
+// search for the three in a row boxes .. x or o? player 1 or player 2?
 // determine which won: X or O , and coordinate that with the player name.
-// window.alert("Player ___ won. Reload to play again!")
 
+    // var p1Win = ("Player 1 (O) has won!");
+    // var p2Win = ("Player 2 (X) has won!");
+    
+// console.log("Win!");
 
 }
-
-
 
 	</script>
 
@@ -94,25 +91,25 @@ function newMove(thisBox){
     movesMade++;    
     tempString = "box" + thisBox;
     console.log("Current box: " + tempString);
-    console.log("Moves made:" + movesMade);
+    console.log("Moves made: " + movesMade);
 
     var oddPlayer = movesMade % 2;
     console.log("Odd player: " + oddPlayer);
     tempId = document.getElementById(tempString);
 
-
     if (oddPlayer) {
     	console.log("Player is X.");
-   	    tempId.innerHTML = player1;
+   	    tempId.innerHTML = player2;
 	    tempId.style.color = "lightblue";
 	    } else {
 	    	console.log("Player is O.");
-    	    tempId.innerHTML = player0;
+    	    tempId.innerHTML = player1;
    	        tempId.style.color = "orange";
 	    }
-
-
  }
+
+// this function allows us to alternate between X and O so that the players each get a turn, one after another.
+
 
 </script>
 </body>
