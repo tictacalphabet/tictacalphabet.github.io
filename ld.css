@@ -14,24 +14,24 @@ float: left;
 
 }
 
+.gamesquare {
+height: 150px;
+padding-top: 30px;
+
+width: 200px;
+background-color: transparent;
+font-size: 100px;
+font-family: Arial, Helvetica, sans-serif;
+text-align: center;
+}
+
 #gameboard {
 	background-color: transparent;
 	margin: 20px;
 
 }
 
-.gamesquare {
-height: 200px;
-width: 200px;
-background-color: transparent;
-font-size: 100px;
-font-family: Arial, Helvetica, sans-serif;
-}
 
-/*.gamesquare:hover {
-	cursor: pointer;
-	background-color: lightblue;
-}*/
 
 #box0 {
 	float: left;

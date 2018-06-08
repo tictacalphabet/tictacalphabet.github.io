@@ -1,4 +1,5 @@
-<!-- a note to mr. rowe: i've changed my project from tic tac toe alphabet to just tic tac toe -->
+<!-- criteria missing: while, for loop, button, writeIn, innerHTML (has been added, needs syntax work), form -->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,47 +11,105 @@
 
 <script>
 
-var player1 = 'O';
+
 var player2 = 'X';
+// even player goes first
+
+// odd player goes next
+var player1 = 'O';
 
 var currentPlayer = 0;
-var movesMade = 0;
+var movesCounter = 0;
+
+var humanChoices = [8,8,8,8,8,8,8,8,8];
+
+// 8 is nobody, nothing
+// 9 is a wild card 
+
+
+
+// this below does not change, two dimensitonal array
+var cheatSheet = [
+	[1,1,1,9,9,9,9,9,9], // end with commas
+	[2,2,2,9,9,9,9,9,9]
+
+
+];
+
+
 
 // the currentPlayer variable will help us determine which player goes next which is later used in the function newMove down below on line 86
 
 // the moves made variable helps us count the number of moves which is later useful in checking for winner
 
-function checkWin(){
-    if(movesMade > 5) {
-    var winningCombos = [
-        [0, 1, 2],
-        [3, 4, 5],
-        [6, 7, 8],
-        [0, 3, 6],
-        [1, 4, 7],
-        [2, 5, 8],
-        [0, 4, 8],
-        [2, 4, 6]
-        ];
+function checkForWin(thisPlayer){
 
-    // check if winningCombos (winning boxes) are true and valid  
+    console.log("humanChoices"  + humanChoices  );
+    // compare our human choice with cheat sheet 0 index, add loop later
+    // look at all nine items in the arrays
 
-        declareWinner();
-    } else {
-        detectDraw();
-    }
+
+    // outer for loop j will match total number of cheat sheets
+    // we have to change the outer loop condition if we add more cheat sheets
+    outerloop:
+    for ( var j = 0; j < 2 ; j++  ) {
+	    console.log("cheat sheet "  + cheatSheet[j]  );  // whole cheat sheet
+	    // innder for loop
+	    innerloop:
+	    for ( var i = 0 ;  i < 9 ; i++     )  {
+	    	foundWinner = 1;
+   			// console.log("data: " + cheatSheet[j][i] );  
+
+			if (  humanChoices[i] == cheatSheet[j][i]  ) 
+			{
+			console.log("had match")  // first
+			// false trigger as match if i = 6,7,8
+			} 
+			else if   ( cheatSheet[j][i] == 9 )  // only a wildcard if cheat sheet has 9
+			{
+			console.log("wildcard found" + i + " " + cheatSheet[j][i] );  // second
+			// this true and we are at index zero game over
+			if ( i == 8 ) {
+				break outerloop;
+				}
+
+			}
+			else 
+			{
+			console.log("missmatch exit check ");  // third
+			foundWinner = 0;
+			break innerloop; 
+			}// close if 	
+		} // close for loop inner
+
+
+    } // close outer for loop
+
+
+
+console.log("fw" + foundWinner);
+
+if ( foundWinner) { 
+	alert("found winner");
 }
+
+
+} // end function checkForWin
+
+// this function will check for if there is a win every 5 minutes, and then we will declare the winner and if not then we will go to the function detectDraw.
+
 
 
 function detectDraw(){
 
-    // var drawMessage = ("It's a tie!");
+    var drawMessage = ("It's a tie!");
     // document.getElementById("drawMsg").innerHTML = drawMessage;
 
-    } else {
-        declareWinner();
-    }
-}
+    } 
+
+// this function should only run if no winner was detected from the function checkWin. this will just give the user a message saying that the game has been tied.
+
+
 
 function declareWinner(){
 
@@ -59,41 +118,22 @@ function declareWinner(){
 
     // var p1Win = ("Player 1 (O) has won!");
     // var p2Win = ("Player 2 (X) has won!");
-    
-// console.log("Win!");
 
 }
 
-	</script>
-
-<body>
-
-<center> 
-	<h1> Tic Tac Toe!</h1> 
-</center>
-
-
-<br>
-
-<div class="gamesquare" id="box0" onclick="newMove(0)"> </div>
-<div class="gamesquare" id="box1" onclick="newMove(1)"> </div>
-<div class="gamesquare" id="box2" onclick="newMove(2)"> </div> 
-<div class="gamesquare" id="box3" onclick="newMove(3)"> </div>
-<div class="gamesquare" id="box4" onclick="newMove(4)"> </div>
-<div class="gamesquare" id="box5" onclick="newMove(5)"> </div> 
-<div class="gamesquare" id="box6" onclick="newMove(6)"> </div>
-<div class="gamesquare" id="box7" onclick="newMove(7)"> </div>
-<div class="gamesquare" id="box8" onclick="newMove(8)"> </div>
-
-<script>
 
 function newMove(thisBox){
-    movesMade++;    
+
+	// mark the new move in our answer sheet
+
+	// we need to record which boxes have been clicked (and by what user?)
+
+    movesCounter++;    
     tempString = "box" + thisBox;
     console.log("Current box: " + tempString);
-    console.log("Moves made: " + movesMade);
+    console.log("Moves made: " + movesCounter);
 
-    var oddPlayer = movesMade % 2;
+    var oddPlayer = movesCounter % 2;
     console.log("Odd player: " + oddPlayer);
     tempId = document.getElementById(tempString);
 
@@ -106,11 +146,73 @@ function newMove(thisBox){
     	    tempId.innerHTML = player1;
    	        tempId.style.color = "orange";
 	    }
- }
+
+
+if (oddPlayer == 0 ) {
+	oddPlayer = 2;
+}
+
+
+// push a 1 or 2 into the boxes! we hope :) 
+humanChoices[thisBox] = oddPlayer;
+ // check if there is a winner
+checkForWin(oddPlayer);
+
+
+
+} // close function newMove
 
 // this function allows us to alternate between X and O so that the players each get a turn, one after another.
 
+// the way this works is with a variable called oddplayer in which we just divide the variable movesCounter by 2 in order to determeine which player goes next.
+
+
+
+// this function here should be able to see what user managed to get a 3 in a row and then the computer will declare which player it is- signaling that they have won.
+
 
 </script>
+
+
+
+<body>
+<center> 
+	<h1> Tic Tac Toe!</h1> 
+</center>
+<br> 
+
+
+<div class="gamesquare" id="box0" onclick="newMove(0)"> </div>
+<div class="gamesquare" id="box1" onclick="newMove(1)"> </div>
+<div class="gamesquare" id="box2" onclick="newMove(2)"> </div> 
+<div class="gamesquare" id="box3" onclick="newMove(3)"> </div>
+<div class="gamesquare" id="box4" onclick="newMove(4)"> </div>
+<div class="gamesquare" id="box5" onclick="newMove(5)"> </div> 
+<div class="gamesquare" id="box6" onclick="newMove(6)"> </div>
+<div class="gamesquare" id="box7" onclick="newMove(7)"> </div>
+<div class="gamesquare" id="box8" onclick="newMove(8)"> </div>
+ 
 </body>
 </html>
+
+
+<!-- 
+	[3, 4, 5],
+	[6, 7, 8],
+	[0, 3, 6],
+	[1, 4, 7],
+	[2, 5, 8],
+	[0, 4, 8],
+	[2, 4, 6]
+ 
+
+
+    if(movesCounter > 0) {
+    // check if winningCombos (winning boxes) are true and valid  
+        declareWinner();
+    } else {
+        detectDraw();
+    }
+
+
+ -->
