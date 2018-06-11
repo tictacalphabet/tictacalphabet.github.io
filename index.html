@@ -1,9 +1,8 @@
-<!-- criteria missing: while, for loop, button, writeIn, innerHTML (has been added, needs syntax work), form -->
-
+<!-- criteria missing: writeln, form, button -->
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="ld.css">
+	<link rel="stylesheet" type="text/css" href="ttt.css">
 	<title> tic tac toe! </title>
 	<script type="text/javascript"> </script>
 
@@ -11,24 +10,20 @@
 
 <script>
 
+var player1 = 'O';
+// odd player goes after even player
 
 var player2 = 'X';
 // even player goes first
 
-// odd player goes next
-var player1 = 'O';
-
 var currentPlayer = 0;
 var movesCounter = 0;
-
 
 // 8 is replaced by 1 or 2
 var humanChoices = [8,8,8,8,8,8,8,8,8];
 
 // 8 is nobody, nothing
 // 9 is a wild card 
-
-
 
 // this below does not change, two dimensitonal array
 var cheatSheet = [
@@ -38,45 +33,42 @@ var cheatSheet = [
 	[9,9,9,2,2,2,9,9,9],
 	[9,9,9,9,9,9,1,1,1],
 	[9,9,9,9,9,9,2,2,2],
-	[1,9,9,9,1,9,9,9,1],
-	[2,9,9,9,2,9,9,9,2],
-	[9,9,1,9,1,9,1,9,9],
-	[9,9,2,9,2,9,2,9,9],
+	// [1,9,9,9,1,9,9,9,1],
+	// [2,9,9,9,2,9,9,9,2],
+	// [9,9,1,9,1,9,1,9,9],
+	// [9,9,2,9,2,9,2,9,9],
+	[1,9,9,1,9,9,1,9,9],
+	[2,9,9,2,9,9,2,9,9],
+	[9,1,9,9,1,9,9,1,9],
+	[9,2,9,9,2,9,9,2,9],
+	[9,9,1,9,9,1,9,9,1],
+	[9,9,2,9,9,2,9,9,2],
 
 ];
 
-
-
-// the currentPlayer variable will help us determine which player goes next which is later used in the function newMove down below on line 86
-
-// the moves made variable helps us count the number of moves which is later useful in checking for winner
-
 function checkForWin(thisPlayer){
+    console.log("Human choices: "  + humanChoices);
 
-    console.log("humanChoices"  + humanChoices  );
     // compare our human choice with cheat sheet 0 index, add loop later
     // look at all nine items in the arrays
-
-
     // outer for loop j will match total number of cheat sheets
     // we have to change the outer loop condition if we add more cheat sheets
-    outerloop:
-    for ( var j = 0; j < 10 ; j++  ) {
-	    console.log("cheat sheet "  + cheatSheet[j]  );  // whole cheat sheet
-	    // innder for loop
-	    innerloop:
-	    for ( var i = 0 ;  i < 9 ; i++     )  {
-	    	foundWinner = 1;
-   			// console.log("data: " + cheatSheet[j][i] );  
 
-			if (  humanChoices[i] == cheatSheet[j][i]  ) 
+    outerloop:
+    for (var j = 0; j < 12 ; j++) {
+	    console.log("Cheat sheet: " + cheatSheet[j]);  // whole cheat sheet
+	    // inner for loop
+	    innerloop:
+	    for (var i = 0 ;  i < 9 ; i++) {
+	    	foundWinner = 1; 
+
+			if (humanChoices[i] == cheatSheet[j][i]) 
 			{
-			console.log("had match")  // first
-			// false trigger as match if i = 6,7,8
+			console.log("Found a match!"); 
 			} 
-			else if   ( cheatSheet[j][i] == 9 )  // only a wildcard if cheat sheet has 9
+			else if (cheatSheet[j][i] == 9 )  // only a wildcard if cheat sheet has 9
 			{
-			console.log("wildcard found" + i + " " + cheatSheet[j][i] );  // second
+			console.log("Wildcards found: " + i + " " + cheatSheet[j][i] );  // second
 			// this true and we are at index zero game over
 			if ( i == 8 ) {
 				break outerloop;
@@ -85,7 +77,7 @@ function checkForWin(thisPlayer){
 			}
 			else 
 			{
-			console.log("missmatch exit check ");  // third
+			console.log("Missmatch - EXIT ");  // third
 			foundWinner = 0;
 			break innerloop; 
 			}// close if 	
@@ -96,23 +88,17 @@ function checkForWin(thisPlayer){
 
 
 
-console.log("fw" + foundWinner);
+console.log("Found Winner " + foundWinner);
 
-if ( foundWinner) { 
-	alert("found winner");
+if (foundWinner) { 
+function clickWinner() {
+    document.getElementById("demo").innerHTML = "Player 1 (X) won!";
+}
+}
 }
 
-
-} // end function checkForWin
-
-// this function will check for if there is a win every 5 minutes, and then we will declare the winner and if not then we will go to the function detectDraw.
-
-
 function newMove(thisBox){
-
 	// mark the new move in our answer sheet
-
-	// we need to record which boxes have been clicked (and by what user?)
 
     movesCounter++;    
     tempString = "box" + thisBox;
@@ -126,25 +112,20 @@ function newMove(thisBox){
     if (oddPlayer) {
     	console.log("Player is X.");
    	    tempId.innerHTML = player2;
-	    tempId.style.color = "lightblue";
+	    tempId.style.color = "#D2A878";
 	    } else {
 	    	console.log("Player is O.");
     	    tempId.innerHTML = player1;
-   	        tempId.style.color = "orange";
+   	        tempId.style.color = "cyan";
 	    }
-
 
 if (oddPlayer == 0 ) {
 	oddPlayer = 2;
 }
 
-
-// push a 1 or 2 into the boxes! we hope :) 
 humanChoices[thisBox] = oddPlayer;
  // check if there is a winner
 checkForWin(oddPlayer);
-
-
 
 } // close function newMove
 
@@ -155,14 +136,11 @@ checkForWin(oddPlayer);
 
 </script>
 
-
-
 <body>
 <center> 
 	<h1> Tic Tac Toe!</h1> 
 </center>
 <br> 
-
 
 <div class="gamesquare" id="box0" onclick="newMove(0)"> </div>
 <div class="gamesquare" id="box1" onclick="newMove(1)"> </div>
@@ -174,6 +152,12 @@ checkForWin(oddPlayer);
 <div class="gamesquare" id="box7" onclick="newMove(7)"> </div>
 <div class="gamesquare" id="box8" onclick="newMove(8)"> </div>
  
+ <p id="demo" onclick="clickWinner()">Click here to see who won...</p>
+ <script>
+function clickWinner() {
+    document.getElementById("demo").innerHTML = "Player 1 (X) won!";
+}
+</script>
 </body>
 </html>
 
