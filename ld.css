@@ -6,7 +6,7 @@ body {
 h1 {
 	background-color: white;
 	margin: 10px;
-	font-family: "Verdana", "Sans-serif";
+	font-family: Verdana, Sans-serif;
 }
 
 div {
@@ -14,6 +14,15 @@ float: left;
 
 }
 
+p {
+clear: both;
+text-align: center;
+font-family: Verdana, Sans-serif;
+font-size: 25px;
+font-weight: bold;
+
+
+}
 .gamesquare {
 height: 150px;
 padding-top: 30px;
